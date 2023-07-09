@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <h1>Welcome</h1>
+
+    <form  method="post">
+        <p>Nazwa zadania</p> <br>
+        <input type="text" name="nazwa">
+        <br>
+        <br>
+        <p>Termin wykonania zadania</p> <br>
+        <input type="date" name="data" >
+        <br><br>
+
+        <p>Piorytet</p>
+        <br>
+        <select name="piorytet" id="piory">
+            <option value="Niski">Niski</option>
+            <option value="Średni">Średni</option>
+            <option value="Wysoki">Wysoki</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Wyslij">
+        <input type="reset" value="Reset">
+    </form>
+    <br><br>
+    <a href="/task">Lista twoich zadań</a>
+</body>
+</html>
