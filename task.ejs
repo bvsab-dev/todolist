@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Lista zadań</title>
+</head>
+<body>
+    <div id="wrapper">
+    <div id="list">
+        <h1><%= title %></h1>
+
+
+            <% if(action =='add') {%>
+
+                <% } else if(action =='edit') { %>
+                <%} else {%>
+
+                    <div id="taski">
+                            <table>
+                                <tr>
+                                    <th>Nazwa zadania</th>
+                                    <th>Termin wykonania zadania</th>
+                                    <th>Piorytet</th>
+                                    <th>Zrobione?</th>
+                                    <th>Zaznacz jako wykonane</th>
+                                    <th>Usuń</th>
+                                </tr>
+
+                                <%
+                                
+                                    if(task.length > 0 )
+                                    {
+                                        task.forEach(function(data){
+                                            %>
+
+                                                <tr>
+                                                    <td> <%= data.task_name %></td>
+                                                    <td><%= data.data %></td>
+                                                    <td><%=data.piority %></td>
+                                                    <td><%=data.done %></td>
+                                                    <td>
+                                                        <a href="/task/done/<%=data.id%>">Zrób!</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/task/delete/<%= data.id%>"> Usuń</a>
+                                                    </td>
+                                                </tr>
+                                                
+                                            <%
+                                        });
+                                    }
+                                    else 
+                                    {
+                                        %>
+
+                                        <tr>
+                                            <td>no data</td>
+                                        </tr>
+
+                                        <%
+                                    }
+                                
+                                %>
+
+                            </table>
+                        </div>
+
+
+                    <%} %>
+
+                </div>
+                    <div id="Filtry">
+                        <h2>Filtrowanie</h2>
+<br>
+                        <form  method="post">
+                            Szukanie czy zrobione <br>
+                          <select name="dond" id="doned">
+                            <option value="tak">tak</option>
+                            <option value="nie">nie</option>
+                          </select>
+                          <br><br>
+                          <input type="submit" value="Filtruj">
+</form>
+                          <form  method="post">
+                          <br><br>
+                          Wyszukaj po piorytecie <br>
+                          <select name="piorit" id="piorit">
+                            <option value="Niski">Niski</option>
+                            <option value="Średni">Średni</option>
+                            <option value="Wysoki">Wysoki</option>
+                          </select>
+<br><br>
+                            <input type="submit" value="Filtruj">
+                        </form>
+                        <br><br><br>
+                        <a href="/">Powrót na stronę główną</a>
+                    </div>
+                  
+                </div>
+                
+</body>
+</html>
