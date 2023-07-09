@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    background-color: black;
+    color: green;
+    text-align: center;
+}
+
+h1 {
+    font-style: initial;
+    text-align: center;
+}
+
+table {
+       
+        text-align: center;
+}
+
+td,th{
+   
+    border: 2px blue inset;
+    
+}
+
+
+
+#taski table {
+    margin: 0 auto;
+}
+
+#list {
+   width: 70%;
+   position: absolute;
+   left: 0;
+}
+#Filtry {
+    width: 30%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    
+}
+
+
+
+#wrapper {
+    position: relative;
+    width: 100%;
+}
